@@ -1,0 +1,30 @@
+<div class="col-md-6">
+  <h2 class="text-center">Cadastro de Posto de Combustivel</h2>
+<form>
+  <div class="form-group">
+    <label for="email">Nome do Posto:</label>
+    <input type="email" [(ngModel)]="posto.nome" placeholder="Posto Exemplo" name="email" class="form-control" id="email">
+  </div>
+    
+  <div class="form-group">
+    <label for="email">Endereço:</label>
+    <input type="email" [(ngModel)]="posto.endereco" placeholder="Rua ...." name="email" class="form-control" id="email">
+  </div>
+
+  <div class="form-group">
+    <label for="firstName">CNPJ:</label>
+    <input [(ngModel)]="posto.cnpj" placeholder="000000000-00" name="firstName" class="form-control" id="firstName">
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Username:</label>
+   <input [(ngModel)]="posto.username" placeholder="username" name="lastName" class="form-control" id="lastName">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Senha:</label>
+    <input [(ngModel)]="posto.password" placeholder="*****" name="lastName" class="form-control" id="lastName">
+  </div>
+  
+  <button class="btn btn-success" (click)="createUser()">Create</button>
+</form>
+</div>

@@ -1,16 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router'
+import{HttpModule}   from '@angular/http';
+import{FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { ClienteComponent } from './component/cliente/cliente.component';
+import { PostoComponent } from './component/posto/posto.component';
 
+import { ClienteService } from './service/cliente.service';
+
+const appRoutes:Routes = [
+  { path: "add-posto", component: PostoComponent},
+  { path: "add-cliente", component: ClienteComponent}
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClienteComponent,
+    PostoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
