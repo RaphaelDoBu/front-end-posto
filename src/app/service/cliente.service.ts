@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Cliente } from '../model/cliente.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,11 @@ export class ClienteService {
 
   constructor(private http:HttpClient) { }
 
-  getAll(): Observable<any> {
-    return this.http.get('http://localhost:8080/cliente');
-
+  createUser(user) {
+    return this.http.post<Cliente>(this.baseUrl, user);
   }
 
+  getAll(): Observable<any> {
+    return this.http.get(this.baseUrl);
+  }
 }

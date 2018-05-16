@@ -1,21 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from "../../service/cliente.service"
+import { Router } from '@angular/router';
+import { Cliente } from '../../model/cliente.model';
 
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
   styleUrls: ['./cliente.component.css']
 })
-export class ClienteComponent implements OnInit {
+export class ClienteComponent implements OnInit{
 
-  cliente: Array<any>;
 
-  constructor(public clienteService: ClienteService) { }
+  cliente: Cliente = new Cliente();
+
+  constructor(private router: Router, private clienteService: ClienteService) {
+
+  }
 
   ngOnInit() {
     this.clienteService.getAll().subscribe(data => {
       this.cliente = data;
-    });
-  }
+  });
+
+  createUser(): void {
+    this.clienteService.createUser(this.cliente)
+        .subscribe( data => {
+          alert("User created successfully.");
+        });
+
+  };
 
 }
