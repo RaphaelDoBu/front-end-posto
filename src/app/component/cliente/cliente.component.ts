@@ -9,15 +9,13 @@ import { Cliente } from '../../model/cliente.model';
   styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent implements OnInit{
-  cliente: Cliente = new Cliente();
+  users: Cliente[];
 
   constructor(private router: Router, private clienteService: ClienteService) {}
 
   ngOnInit() {
     this.clienteService.getAll().subscribe(data => {
-      this.cliente = data;
+      this.users = data;
     });
   }
-  
-
 }

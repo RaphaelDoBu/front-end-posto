@@ -16,7 +16,8 @@ import { AddClienteComponent } from './component/cliente/add-cliente/add-cliente
 const appRoutes:Routes = [
   { path: "add-posto", component: PostoComponent},
   { path: "add-cliente", component: AddClienteComponent},
-  { path: "login", component: LoginComponent}
+  { path: "login", component: LoginComponent},
+  { path: "lista-clientes", component: ClienteComponent}
 ];
 @NgModule({
   declarations: [

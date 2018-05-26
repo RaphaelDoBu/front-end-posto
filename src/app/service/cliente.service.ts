@@ -23,6 +23,6 @@ export class ClienteService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get(this.baseUrl);
+    return this.http.get(this.baseUrl+"s");
   }
 }

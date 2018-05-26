@@ -1,4 +1,4 @@
-<!-- <div class="col-md-6">
+<div class="col-md-6">
   <h2> User Details</h2>
   
   <table class="table table-striped">
@@ -8,17 +8,19 @@
       <th>FirstName</th>
       <th>LastName</th>
       <th>Email</th>
-      <th>Action</th>
+      <th>qua</th>
+      <th>Acção</th>
     </tr>
-    </theadv
+  </thead>
     <tbody>
     <tr *ngFor="let user of users">
-      <td class="hidden"></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td class="hidden">{{user.id}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.password}}</td>
+      <td>{{user.nome}}</td>
       <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete User</button></td>
     </tr>
     </tbody>
   </table>
-  </div> -->
+</div>
