@@ -9,11 +9,17 @@ import { Cliente } from '../model/cliente.model';
 export class ClienteService {
   private baseUrl:string='http://localhost:8080/cliente';
   clientes: any;
+  headers: { 'Content-Type': 'application/json' ,
+                        'X-Requested-With': 'XMLHttpRequest', 
+                        'Access-Control-Allow-Origin': '*' ,
+                        'Access-Control-Allow-Headers':'origin, content-type, accept, authorization'
+                    }
 
   constructor(private http:HttpClient) { }
 
-  createUser(user) {
-    return this.http.post<Cliente>(this.baseUrl, user);
+  createUser(user: any) : Observable<any> {
+    console.log(user)
+    return this.http.post(this.baseUrl, user);
   }
 
   getAll(): Observable<any> {

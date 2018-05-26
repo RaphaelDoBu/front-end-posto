@@ -10,16 +10,21 @@ import { ClienteComponent } from './component/cliente/cliente.component';
 import { PostoComponent } from './component/posto/posto.component';
 
 import { ClienteService } from './service/cliente.service';
+import { LoginComponent } from './component/login/login.component';
+import { AddClienteComponent } from './component/cliente/add-cliente/add-cliente.component';
 
 const appRoutes:Routes = [
   { path: "add-posto", component: PostoComponent},
-  { path: "add-cliente", component: ClienteComponent}
+  { path: "add-cliente", component: AddClienteComponent},
+  { path: "login", component: LoginComponent}
 ];
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
-    PostoComponent
+    PostoComponent,
+    LoginComponent,
+    AddClienteComponent
   ],
   imports: [
     BrowserModule,
