@@ -12,12 +12,15 @@ import { PostoComponent } from './component/posto/posto.component';
 import { ClienteService } from './service/cliente.service';
 import { LoginComponent } from './component/login/login.component';
 import { AddClienteComponent } from './component/cliente/add-cliente/add-cliente.component';
+import { AddPostoComponent } from './component/posto/add-posto/add-posto.component';
+import { PostoService } from './service/posto.service';
 
 const appRoutes:Routes = [
-  { path: "add-posto", component: PostoComponent},
+  { path: "add-posto", component: AddPostoComponent},
   { path: "add-cliente", component: AddClienteComponent},
   { path: "login", component: LoginComponent},
-  { path: "lista-clientes", component: ClienteComponent}
+  { path: "lista-clientes", component: ClienteComponent},
+  { path: "lista-postos", component: PostoComponent}
 ];
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ const appRoutes:Routes = [
     ClienteComponent,
     PostoComponent,
     LoginComponent,
-    AddClienteComponent
+    AddClienteComponent,
+    AddPostoComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ const appRoutes:Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ClienteService],
+  providers: [ClienteService, PostoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

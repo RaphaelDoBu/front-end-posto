@@ -21,7 +21,6 @@ export class AddClienteComponent implements OnInit {
         .subscribe( data => {
           alert("User created successfully.");
         });
- 
   };
   
 }
