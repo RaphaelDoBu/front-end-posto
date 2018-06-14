@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostoService {
-  private baseUrl:string='http://localhost:8080/posto';
+  private baseUrl:string='http://localhost:8080/signup';
 
   headers: { 'Content-Type': 'application/json' ,
                         'X-Requested-With': 'XMLHttpRequest', 
@@ -22,7 +22,7 @@ export class PostoService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get(this.baseUrl+"s");
+    return this.http.get("http://localhost:8080/postos");
   }
 
 }

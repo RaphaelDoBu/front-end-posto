@@ -3,7 +3,7 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'
 import{HttpModule}   from '@angular/http';
 import{FormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ClienteComponent } from './component/cliente/cliente.component';
@@ -14,6 +14,9 @@ import { LoginComponent } from './component/login/login.component';
 import { AddClienteComponent } from './component/cliente/add-cliente/add-cliente.component';
 import { AddPostoComponent } from './component/posto/add-posto/add-posto.component';
 import { PostoService } from './service/posto.service';
+import { AuthService } from './service/auth.service';
+import {TokenStorage} from './service/token.storage';
+import { Interceptor } from './service/interceptor';
 
 const appRoutes:Routes = [
   { path: "add-posto", component: AddPostoComponent},
@@ -37,7 +40,11 @@ const appRoutes:Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ClienteService, PostoService],
+  providers: [ClienteService, PostoService, AuthService,  TokenStorage, TokenStorage,
+    {provide: HTTP_INTERCEPTORS,
+    useClass: Interceptor,
+    multi : true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

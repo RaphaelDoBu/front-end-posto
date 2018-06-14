@@ -1,32 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { AppService } from '../../app.service';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { AuthService } from '../../auth.service'
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Router} from "@angular/router";
+import { Posto } from '../../model/posto.model';
+import { AuthService } from '../../service/auth.service';
+import {TokenStorage} from '../../service/token.storage';
+import { Login } from '../../model/login.model';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent {
+  loginDados: Login = new Login();
 
-  
-  constructor(private Auth: AuthService) {
+  constructor(private router: Router, private authService: AuthService, private token: TokenStorage) {
   }
 
-  ngOnInit() {
-  
-  }
-
-  loginUser(event){
-    event.preventDefault()
-    const target = event.target 
-    const username = target.querySelector("#username").value;
-    const password = target.querySelector("#password").value;
-
-    this.Auth.getUserDetails(username, password);
-
-    console.log(username, password)
+  login(): void {
+    this.authService.attemptAuth(this.loginDados.username, this.loginDados.password).subscribe(
+      data => {
+        this.token.saveToken(data.token);
+        this.router.navigate(['lista-postos']);
+      }
+    );
   }
 }
