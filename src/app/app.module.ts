@@ -18,6 +18,7 @@ import { AuthService } from './service/auth.service';
 import {TokenStorage} from './service/token.storage';
 import { Interceptor } from './service/interceptor';
 import { CombustivelComponent } from './component/combustivel/combustivel.component';
+import { AddCombustivelComponent } from './component/combustivel/add-combustivel/add-combustivel.component';
 
 const appRoutes:Routes = [
   { path: "add-posto", component: AddPostoComponent},
@@ -36,6 +37,7 @@ const appRoutes:Routes = [
     AddClienteComponent,
     AddPostoComponent,
     CombustivelComponent,
+    AddCombustivelComponent,
   ],
   imports: [
     BrowserModule,
