@@ -24,7 +24,6 @@ const appRoutes:Routes = [
   { path: "add-posto", component: AddPostoComponent},
   { path: "add-cliente", component: AddClienteComponent},
   { path: "login", component: LoginComponent},
-  { path: "lista-clientes", component: ClienteComponent},
   { path: "lista-postos", component: PostoComponent},
   { path: "add-combustivel", component: CombustivelComponent}
 ];

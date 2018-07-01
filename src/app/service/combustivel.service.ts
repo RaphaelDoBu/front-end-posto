@@ -5,9 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PostoService {
-  private baseUrl:string='http://localhost:8080/signup';
-
+export class CombustivelService {
+ 
   headers: { 'Content-Type': 'application/json' ,
                         'X-Requested-With': 'XMLHttpRequest', 
                         'Access-Control-Allow-Origin': '*' ,
@@ -16,12 +15,11 @@ export class PostoService {
 
   constructor(private http:HttpClient) { }
 
-  createPosto(posto: any) : Observable<any> {
+
+
+  listaCombustiveis(posto: any) : Observable<any> {
     console.log(posto)
-    return this.http.post(this.baseUrl, posto);
+    return this.http.get("http://localhost:8080/combustiveis");
   }
 
-  getAll(): Observable<any> {
-    return this.http.get("http://localhost:8080/postos");
-  }
 }
