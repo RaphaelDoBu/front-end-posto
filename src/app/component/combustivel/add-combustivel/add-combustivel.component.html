@@ -1,3 +1,17 @@
-<p>
-  add-combustivel works!
-</p>
+<div class="col-md-6">
+  <h2 class="text-center">Cadastro de Combustivel do Posto {{idPosto}}</h2>
+<form>
+  <div class="form-group">
+    <label for="email">Nome do Combustivel:</label>
+    <input type="text" [(ngModel)]="combustivel.nome" placeholder="Alcool, Gasolina,..."
+     name="email" class="form-control" id="email">
+  </div>
+    
+  <div class="form-group">
+    <label for="email">Preço:</label>
+    <input type="number" [(ngModel)]="combustivel.preco" placeholder="R$ 3,40" name="email" class="form-control" id="email">
+  </div>
+
+  <button class="btn btn-success" (click)="createCombustivelPosto()">Create</button>
+</form>
+</div>

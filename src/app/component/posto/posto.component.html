@@ -17,7 +17,8 @@
         <td>{{posto.nome}}</td>
         <td>{{posto.endereco}}</td>
         <td>{{posto.horarioAberto}} as {{posto.horarioFechado}}</td>
-        <td><button class="btn btn-danger" (click)="listaCombustiveis(posto)"> Abrir</button></td>
+        <td><button class="btn btn-danger"  [routerLink]="['/lista-combustiveis', posto.id]">
+           Abrir Combustiveis</button></td>
         <!-- <td><button class="btn btn-danger" (click)="deleteUser(user)"> Abrir</button></td> -->
 
       </tr>

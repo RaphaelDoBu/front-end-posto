@@ -19,13 +19,15 @@ import {TokenStorage} from './service/token.storage';
 import { Interceptor } from './service/interceptor';
 import { CombustivelComponent } from './component/combustivel/combustivel.component';
 import { AddCombustivelComponent } from './component/combustivel/add-combustivel/add-combustivel.component';
+import { CombustivelService } from './service/combustivel.service';
 
 const appRoutes:Routes = [
   { path: "add-posto", component: AddPostoComponent},
   { path: "add-cliente", component: AddClienteComponent},
   { path: "login", component: LoginComponent},
   { path: "lista-postos", component: PostoComponent},
-  { path: "add-combustivel", component: CombustivelComponent}
+  { path: "lista-combustiveis/:idPosto", component: CombustivelComponent},
+  { path: "add-combustivel/:idPost", component: AddCombustivelComponent}
 ];
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ const appRoutes:Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ClienteService, PostoService, AuthService,  TokenStorage, TokenStorage,
+  providers: [ClienteService, PostoService, CombustivelService, AuthService,  TokenStorage,
+     TokenStorage,
     {provide: HTTP_INTERCEPTORS,
     useClass: Interceptor,
     multi : true}

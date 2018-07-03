@@ -1,3 +1,25 @@
-<p>
-  combustivel works!
-</p>
+<div class="col-md-6">
+  <h2> Lista de Postos</h2>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Aumento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let combustivel of combustiveis">
+        <td class="hidden">{{combustivel.id}}</td>
+        <td>{{combustivel.nome}}</td>
+        <td>{{combustivel.preco}}</td>
+        <td>{{combustivel.aumento}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <td><button class="btn btn-danger"  [routerLink]="['/add-combustivel', idPosto]">
+    Adicionar Combustiveis</button></td>
+
+</div>
