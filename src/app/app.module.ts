@@ -20,6 +20,7 @@ import { Interceptor } from './service/interceptor';
 import { CombustivelComponent } from './component/combustivel/combustivel.component';
 import { AddCombustivelComponent } from './component/combustivel/add-combustivel/add-combustivel.component';
 import { CombustivelService } from './service/combustivel.service';
+import { UserStorage } from './service/user.storage';
 
 const appRoutes:Routes = [
   { path: "add-posto", component: AddPostoComponent},
@@ -47,7 +48,7 @@ const appRoutes:Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ClienteService, PostoService, CombustivelService, AuthService,  TokenStorage,
-     TokenStorage,
+     TokenStorage, UserStorage,
     {provide: HTTP_INTERCEPTORS,
     useClass: Interceptor,
     multi : true}

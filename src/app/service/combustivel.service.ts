@@ -18,17 +18,17 @@ export class CombustivelService {
   constructor(private http:HttpClient) { }
 
   createCombustivelPosto(idPosto: any, combustivel: any) : Observable<any> {
-    console.log(idPosto)
     return this.http.post("http://localhost:8080/posto/" + idPosto +
                           "/combustivel", combustivel);
   }
 
   listaCombustiveis(idPosto : any) : Observable<any> {
-    console.log(idPosto.type)
     this.idPost = idPosto;
-    console.log(this.idPost)
-    // this.idPosto = idPosto;
     return this.http.get("http://localhost:8080/posto/" +idPosto +"/combustiveis");
-  } 
+  }
+
+  buscarPosto(idPosto : any) : Observable<any>{
+    return this.http.get("http://localhost:8080/posto/" +idPosto);
+  }
 
 }

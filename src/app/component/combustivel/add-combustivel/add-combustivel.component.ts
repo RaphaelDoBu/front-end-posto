@@ -13,7 +13,8 @@ export class AddCombustivelComponent implements OnInit {
   combustivel: Combustivel = new Combustivel();
   idPosto : number;
 
-  constructor(private route: ActivatedRoute,private router: Router, private combustivelService: CombustivelService) { }
+  constructor(private route: ActivatedRoute,private router: Router, 
+    private combustivelService: CombustivelService, ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -27,5 +28,6 @@ export class AddCombustivelComponent implements OnInit {
         .subscribe( data => {
           alert("Combustivel created successfully.");
         });
+    this.router.navigate(['lista-combustiveis/'+this.idPosto]);
   };
 }

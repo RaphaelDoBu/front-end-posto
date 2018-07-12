@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
+const USER = 'usuarioLog';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PostoService {
   private baseUrl:string='http://localhost:8080/signup';
+  user: String;
 
   headers: { 'Content-Type': 'application/json' ,
                         'X-Requested-With': 'XMLHttpRequest', 
@@ -24,4 +28,6 @@ export class PostoService {
   getAll(): Observable<any> {
     return this.http.get("http://localhost:8080/postos");
   }
+
+  
 }

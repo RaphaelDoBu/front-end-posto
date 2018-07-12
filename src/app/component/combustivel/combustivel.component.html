@@ -19,7 +19,8 @@
       </tr>
     </tbody>
   </table>
-  <td><button class="btn btn-danger"  [routerLink]="['/add-combustivel', idPosto]">
+  <td><button class="btn btn-danger"  [routerLink]="['/add-combustivel', idPosto]" 
+    [disabled]="usuarioLog != usuarioBuscado">
     Adicionar Combustiveis</button></td>
 
 </div>

@@ -17,10 +17,10 @@ export class AddClienteComponent implements OnInit {
   }
 
   createUser(): void {
-    this.clienteService.createUser(this.cliente)
-        .subscribe( data => {
-          alert("User created successfully.");
-        });
+      this.clienteService.createUser(this.cliente)
+          .subscribe( data => {
+            alert("User created successfully.");
+          });
   };
   
 }
