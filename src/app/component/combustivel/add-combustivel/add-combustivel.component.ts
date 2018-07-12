@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AddCombustivelComponent implements OnInit {
   combustivel: Combustivel = new Combustivel();
   idPosto : number;
+  nomeDoPosto: string;
 
   constructor(private route: ActivatedRoute,private router: Router, 
     private combustivelService: CombustivelService, ) { }
@@ -19,7 +20,9 @@ export class AddCombustivelComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.idPosto = +params['idPost'];
-      console.log(this.idPosto);
+    });
+    this.combustivelService.buscarPosto(this.idPosto).subscribe(data => {
+      this.nomeDoPosto = data.nome;
     });
   }
 

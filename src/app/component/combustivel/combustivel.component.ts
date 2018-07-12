@@ -15,6 +15,7 @@ export class CombustivelComponent implements OnInit {
   idPosto: number;
   usuarioLog: string;
   usuarioBuscado: string;
+  nomeDoPosto: string;
 
   constructor(private route: ActivatedRoute,private router: Router, 
     private combustivelService: CombustivelService, private userStorage: UserStorage) { }
@@ -22,18 +23,15 @@ export class CombustivelComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
        this.idPosto = +params['idPosto'];
-       console.log(this.idPosto);
-    });
-    this.combustivelService.buscarPosto(this.idPosto).subscribe(data => {
-      this.usuarioBuscado = data.username;
-      console.log(this.usuarioBuscado)
-
     });
     this.combustivelService.listaCombustiveis(this.idPosto).subscribe(data => {
       this.combustiveis = data;
     });
+    this.combustivelService.buscarPosto(this.idPosto).subscribe(data => {
+      this.usuarioBuscado = data.username;
+      this.nomeDoPosto = data.nome;
+    });
     this.usuarioLog = this.userStorage.getUser();
-    console.log(this.usuarioLog);
     this.comparacao();
   }
 
