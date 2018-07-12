@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostoService } from '../../service/posto.service';
 import { Posto } from '../../model/posto.model';
-import { LoginComponent } from '../login/login.component';
-import { AuthService } from '../../service/auth.service';
 import { UserStorage } from '../../service/user.storage';
+import { TokenStorage } from '../../service/token.storage';
 
 @Component({
   selector: 'app-posto',
@@ -16,7 +15,7 @@ export class PostoComponent implements OnInit {
   usuarioLog: String;
 
   constructor(private router: Router, private postoService: PostoService, 
-              private userStorage: UserStorage) { }
+              private userStorage: UserStorage,  private token: TokenStorage) { }
 
   ngOnInit() {
     this.postoService.getAll().subscribe(data => {
@@ -27,6 +26,10 @@ export class PostoComponent implements OnInit {
     console.log(this.usuarioLog);
   }
 
-  
+  // logout(): void {
+  //   this.token.signOut();
+  //   this.userStorage.signOut();
+  //   this.router.navigate(['login']);
+  // }
 
 }

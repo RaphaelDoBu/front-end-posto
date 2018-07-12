@@ -1,3 +1,5 @@
+<app-logout></app-logout>
+
 <div class="col-md-6">
   <h2> Lista de Postos {{usuarioLog}}</h2>
   
@@ -19,8 +21,6 @@
         <td>{{posto.horarioAberto}} as {{posto.horarioFechado}}</td>
         <td><button class="btn btn-danger"  [routerLink]="['/lista-combustiveis', posto.id]">
            Abrir Combustiveis</button></td>
-        <!-- <td><button class="btn btn-danger" (click)="deleteUser(user)"> Abrir</button></td> -->
-
       </tr>
     </tbody>
   </table>

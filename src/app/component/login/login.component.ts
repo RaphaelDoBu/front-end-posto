@@ -17,7 +17,8 @@ export class LoginComponent {
   loginDados: Login = new Login();
   usuarioLogado: string;
 
-  constructor(private router: Router, private userStorage: UserStorage, private authService: AuthService, private token: TokenStorage) {
+  constructor(private router: Router, private userStorage: UserStorage, 
+                private authService: AuthService, private token: TokenStorage) {
   }
 
   login(): void {
@@ -32,4 +33,7 @@ export class LoginComponent {
       }
     );
   }
+
+ 
+
 }

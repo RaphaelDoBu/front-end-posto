@@ -21,6 +21,7 @@ import { CombustivelComponent } from './component/combustivel/combustivel.compon
 import { AddCombustivelComponent } from './component/combustivel/add-combustivel/add-combustivel.component';
 import { CombustivelService } from './service/combustivel.service';
 import { UserStorage } from './service/user.storage';
+import { LogoutComponent } from './component/login/logout/logout.component';
 
 const appRoutes:Routes = [
   { path: "add-posto", component: AddPostoComponent},
@@ -40,6 +41,7 @@ const appRoutes:Routes = [
     AddPostoComponent,
     CombustivelComponent,
     AddCombustivelComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
