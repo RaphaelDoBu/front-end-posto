@@ -19,8 +19,11 @@ export class AddPostoComponent implements OnInit {
   createPosto(): void {
     this.postoService.createPosto(this.posto)
         .subscribe( data => {
-          alert("User created successfully.");
+          this.posto = new Posto();
+          alert("Posto criado com sucesso.");
+          this.router.navigate(['login']);
         });
+
   };
 
 }

@@ -29,7 +29,7 @@ export class AddCombustivelComponent implements OnInit {
   createCombustivelPosto(): void {
     this.combustivelService.createCombustivelPosto(this.idPosto, this.combustivel)
         .subscribe( data => {
-          alert("Combustivel created successfully.");
+          alert("Combustivel criado com sucesso.");
         });
     this.router.navigate(['lista-combustiveis/'+this.idPosto]);
   };

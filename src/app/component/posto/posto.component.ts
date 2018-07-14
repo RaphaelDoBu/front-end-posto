@@ -26,10 +26,4 @@ export class PostoComponent implements OnInit {
     console.log(this.usuarioLog);
   }
 
-  // logout(): void {
-  //   this.token.signOut();
-  //   this.userStorage.signOut();
-  //   this.router.navigate(['login']);
-  // }
-
 }
