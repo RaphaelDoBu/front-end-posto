@@ -9,7 +9,7 @@ const USER = 'usuarioLog';
   providedIn: 'root'
 })
 export class PostoService {
-  private baseUrl:string='http://localhost:8080/signup';
+  private baseUrl:string='http://localhost:8080/posto';
   user: String;
 
   headers: { 'Content-Type': 'application/json' ,
