@@ -14,7 +14,7 @@ export class PostoService {
 
   headers: { 'Content-Type': 'application/json' ,
                         'X-Requested-With': 'XMLHttpRequest', 
-                        'Access-Control-Allow-Origin': '*' ,
+                        'Access-Control-Allow-Origin': 'https://posto-server.herokuapp.com' ,
                         'Access-Control-Allow-Headers':'origin, content-type, accept, authorization'
                     }
 
@@ -26,7 +26,7 @@ export class PostoService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get("https://posto-server.herokuapp.com");
+    return this.http.get("https://posto-server.herokuapp.com/postos");
   }
 
   
