@@ -12,6 +12,12 @@ export class PostoService {
   private baseUrl:string='https://posto-server.herokuapp.com/';
   user: String;
 
+  headers: { 'Content-Type': 'application/json' ,
+                        'X-Requested-With': 'XMLHttpRequest', 
+                        'Access-Control-Allow-Origin': 'https://de-olho-nos-postos.herokuapp.com/' ,
+                        'Access-Control-Allow-Headers':'origin, content-type, accept, authorization'
+                    }
+
   constructor(private http:HttpClient) { }
 
   createPosto(posto: any) : Observable<any> {
