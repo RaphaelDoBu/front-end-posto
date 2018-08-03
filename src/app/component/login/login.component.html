@@ -6,7 +6,7 @@
 	  <p id="profile-name" class="profile-name-card"></p>
   
 		<form name="form-signin" novalidate>
-			<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+			<div class="form-group">
 				<label for="username">Username</label>
 				<input type="text" class="form-control" [(ngModel)]="loginDados.username"/>
 				<div class="help-block">an valid email is required</div>
