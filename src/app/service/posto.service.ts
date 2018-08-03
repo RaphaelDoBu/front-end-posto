@@ -9,7 +9,7 @@ const USER = 'usuarioLog';
   providedIn: 'root'
 })
 export class PostoService {
-  private baseUrl:string='http://localhost:8080/posto';
+  private baseUrl:string='http://posto-server.herokuapp.com/';
   user: String;
 
   headers: { 'Content-Type': 'application/json' ,
@@ -26,7 +26,7 @@ export class PostoService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get("http://localhost:8080/postos");
+    return this.http.get("http://posto-server.herokuapp.com/");
   }
 
   

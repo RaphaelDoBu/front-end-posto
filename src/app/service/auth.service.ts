@@ -20,12 +20,12 @@ export class AuthService {
     console.log(ussername);
   
     console.log('attempAuth ::');
-    return this.http.post('http://localhost:8080/token/generate-token', credentials);
+    return this.http.post('http://posto-server.herokuapp.com/token/generate-token', credentials);
   }
 
   buscarAutenticado(ussername: string, password: string): Observable<any> {
     const credentials = {username: ussername, password: password};
     console.log('attempAuth ::');
-    return this.http.post('http://localhost:8080/token/usuario-autenticado',credentials);
+    return this.http.post('http://posto-server.herokuapp.com/token/usuario-autenticado',credentials);
   }
 }

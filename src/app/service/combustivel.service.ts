@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CombustivelService {
-  private baseUrl:string='http://localhost:8080/combustivel';
+  private baseUrl:string='http://posto-server.herokuapp.com/combustivel';
   idPost: number;
 
   headers: { 'Content-Type': 'application/json' ,
@@ -18,17 +18,17 @@ export class CombustivelService {
   constructor(private http:HttpClient) { }
 
   createCombustivelPosto(idPosto: any, combustivel: any) : Observable<any> {
-    return this.http.post("http://localhost:8080/posto/" + idPosto +
+    return this.http.post("http://posto-server.herokuapp.com/posto/" + idPosto +
                           "/combustivel", combustivel);
   }
 
   listaCombustiveis(idPosto : any) : Observable<any> {
     this.idPost = idPosto;
-    return this.http.get("http://localhost:8080/posto/" +idPosto +"/combustiveis");
+    return this.http.get("http://posto-server.herokuapp.com/" +idPosto +"/combustiveis");
   }
 
   buscarPosto(idPosto : any) : Observable<any>{
-    return this.http.get("http://localhost:8080/posto/" +idPosto);
+    return this.http.get("http://posto-server.herokuapp.com/" +idPosto);
   }
 
 }

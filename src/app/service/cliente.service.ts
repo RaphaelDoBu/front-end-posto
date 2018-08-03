@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClienteService {
-  private baseUrl:string='http://localhost:8080/cliente';
+  private baseUrl:string='http://posto-server.herokuapp.com/cliente';
   clientes: any;
   headers: { 'Content-Type': 'application/json' ,
                         'X-Requested-With': 'XMLHttpRequest', 
