@@ -5,32 +5,32 @@
 	  <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
 	  <p id="profile-name" class="profile-name-card"></p>
   
-		<form name="form-signin" novalidate>
-			<div class="form-group">
-				<label for="username">Username</label>
-				<input type="text" class="form-control" [(ngModel)]="loginDados.username"/>
-			</div>
-			<div class="form-group">
-				<label for="password">Password</label>
-				<input type="password" class="form-control" [(ngModel)]="loginDados.password"/>
-			</div>
-			<!-- <table class="example-full-width" cellspacing="0">
-				<tr>
-					<td>
-						<div class="example-full-width">
-							<input matInput placeholder="Username" [(ngModel)]="loginDados.username" name="username" required>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td><div class="example-full-width">
-						<input matInput placeholder="Password" [(ngModel)]="loginDados.password" type="password" name="password" required>
-					</div></td>
-				</tr>
-			</table> -->
-			<div id="remember" class="checkbox">
-		
-			</div>
+		<form name="form-signin" (ngSubmit)="login()" novalidate>
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" class="form-control" id="username" name="username" [(ngModel)]="loginDados.username"/>
+		</div>
+		<div class="form-group" >
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" name="password" [(ngModel)]="loginDados.password"/>
+		</div>
+		<!-- <table class="example-full-width" cellspacing="0">
+			<tr>
+				<td>
+					<div class="example-full-width">
+						<input matInput placeholder="Username" [(ngModel)]="loginDados.username" name="username" required>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="example-full-width">
+					<input matInput placeholder="Password" [(ngModel)]="loginDados.password" type="password" name="password" required>
+				</div></td>
+			</tr>
+		</table> -->
+		<div id="remember" class="checkbox">
+	
+		</div>
 			<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
 	  </form><!-- /form -->
 		<a [routerLink]="['/register']" class="btn btn-link">Create new Account!</a>
