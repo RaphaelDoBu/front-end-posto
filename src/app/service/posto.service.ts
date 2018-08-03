@@ -14,7 +14,7 @@ export class PostoService {
 
   headers: { 'Content-Type': 'application/json' ,
                         'X-Requested-With': 'XMLHttpRequest', 
-                        'Access-Control-Allow-Origin': 'https://posto-server.herokuapp.com/' ,
+                        'Access-Control-Allow-Origin': 'http://de-olho-nos-postos.herokuapp.com/' ,
                         'Access-Control-Allow-Headers':'origin, content-type, accept, authorization'
                     }
 
