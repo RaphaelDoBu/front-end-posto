@@ -1,3 +1,6 @@
+## Vídeo Explicativo
+https://www.youtube.com/watch?v=hAbRTSn1090
+
 ## Tecnologias Utilizadas
 Angular6, NodeJs
 
