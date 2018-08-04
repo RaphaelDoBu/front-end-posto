@@ -10,8 +10,6 @@ import { AppComponent } from '../app.component';
 })
 export class AuthService {
 
-  // baseUrl: 'http://localhost:8080/email2sms/';
-
   constructor(private http: HttpClient) {
   }
 
@@ -20,12 +18,12 @@ export class AuthService {
     console.log(ussername);
   
     console.log('attempAuth ::');
-    return this.http.post('http://posto-server.herokuapp.com/token/generate-token', credentials);
+    return this.http.post('https://posto-server.herokuapp.com/token/generate-token', credentials);
   }
 
   buscarAutenticado(ussername: string, password: string): Observable<any> {
     const credentials = {username: ussername, password: password};
     console.log('attempAuth ::');
-    return this.http.post('http://posto-server.herokuapp.com/token/usuario-autenticado',credentials);
+    return this.http.post('https://posto-server.herokuapp.com/token/usuario-autenticado',credentials);
   }
 }

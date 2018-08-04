@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClienteService {
-  private baseUrl:string='http://posto-server.herokuapp.com/cliente';
+  private baseUrl:string='https://posto-server.herokuapp.com/cliente';
   clientes: any;
   headers: { 'Content-Type': 'application/json' ,
                         'X-Requested-With': 'XMLHttpRequest', 
-                        'Access-Control-Allow-Origin': '*' ,
+                        'Access-Control-Allow-Origin': 'https://posto-server.herokuapp.com' ,
                         'Access-Control-Allow-Headers':'origin, content-type, accept, authorization'
                     }
 
