@@ -9,6 +9,7 @@ import { AppComponent } from '../app.component';
   providedIn: 'root'
 })
 export class AuthService {
+  private baseUrl:string='https://posto-server.herokuapp.com/token/';
 
   constructor(private http: HttpClient) {
   }
@@ -18,12 +19,12 @@ export class AuthService {
     console.log(ussername);
   
     console.log('attempAuth ::');
-    return this.http.post('https://posto-server.herokuapp.com/token/generate-token', credentials);
+    return this.http.post(this.baseUrl+ 'generate-token', credentials);
   }
 
   buscarAutenticado(ussername: string, password: string): Observable<any> {
     const credentials = {username: ussername, password: password};
     console.log('attempAuth ::');
-    return this.http.post('https://posto-server.herokuapp.com/token/usuario-autenticado',credentials);
+    return this.http.post(this.baseUrl+'usuario-autenticado',credentials);
   }
 }

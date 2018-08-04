@@ -26,7 +26,7 @@ export class PostoService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get("https://posto-server.herokuapp.com/postos");
+    return this.http.get(this.baseUrl + 's');
   }
 
   
