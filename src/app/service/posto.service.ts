@@ -9,12 +9,12 @@ const USER = 'usuarioLog';
   providedIn: 'root'
 })
 export class PostoService {
-  private baseUrl:string='posto-server.herokuapp.com/posto';
+  private baseUrl:string='http://posto-server.herokuapp.com/posto';
   user: String;
 
   headers: { 'Content-Type': 'application/json' ,
                         'X-Requested-With': 'XMLHttpRequest', 
-                        'Access-Control-Allow-Origin': 'posto-server.herokuapp.com' ,
+                        'Access-Control-Allow-Origin': 'http://posto-server.herokuapp.com' ,
                         'Access-Control-Allow-Headers':'origin, content-type, accept, authorization'
                     }
 
@@ -26,7 +26,7 @@ export class PostoService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get("posto-server.herokuapp.com/postos");
+    return this.http.get("http://posto-server.herokuapp.com/postos");
   }
 
   
